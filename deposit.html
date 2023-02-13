@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Bank</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="flex items-center justify-center h-screen bg-gradient-to-tr from-fuchsia-300 to-sky-500">
+      <main>
+        <section class="flex flex-col items-center justify-center p-20 rounded bg-sky-100" id="login-section">
+          <h1 class="mx-auto mb-6 text-4xl font-bold text-center">
+            Your <span class="text-pink-700">Interactive Bank</span> Account
+          </h1>
+          <div class="w-4/5 mx-auto">
+            <p class="font-medium text-center">Your Deposit</p>
+            
+            <input class="block w-full px-4 py-2 my-1 border border-gray-300 rounded-md shadow-sm" id="login-email" type="email" placeholder="Enter an amount for deposit">
+            <button class="block w-full px-4 py-2 my-1 font-semibold bg-pink-600 border border-gray-300 rounded-md disabled:opacity-75 disabled:hover:bg-pink-600 disabled:translate-y-0 shadow-sm hover:bg-pink-800 active:translate-y-0.5 text-slate-200" id="login-submit" type="submit" disabled>Deposit</button>
+            <input class="block w-full px-4 py-2 my-1 border border-gray-300 rounded-md shadow-sm" id="login-password" type="number" placeholder="Enter an amount for withdraw">
+            <button class="block w-full px-4 py-2 my-1 font-semibold bg-pink-600 border border-gray-300 rounded-md disabled:opacity-75 disabled:hover:bg-pink-600 disabled:translate-y-0 shadow-sm hover:bg-pink-800 active:translate-y-0.5 text-slate-200" id="login-submit" type="submit" disabled>Withdraw</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="deposit.js"></script>
+  </body>
+</html>

@@ -9,10 +9,12 @@
   ];
 
   // Selecting the necessary DOM.
-  const loginSection = document.querySelector('#login-section');
   const emailInputBox = document.querySelector('#login-email');
   const passwordInputBox = document.querySelector('#login-password');
   const loginSubmitBtn = document.querySelector('#login-submit');
+  const loginErrorMsg = document.querySelector('#login-error');
+
+  loginErrorMsg.style.display = 'none';
 
   // Defining necessary global variable.
   let inputEmail = '';
@@ -42,12 +44,14 @@
 
   /**
    * Event Listener for Login button.
-   * Login to Diposit account.
+   * Rediract to deposit.html if email and password matches.
    */
   loginSubmitBtn.addEventListener('click', function() {
     if (matchAccount(inputEmail, inputPassword)) {
       console.log('hello');
-      loginSection.style.display = 'none';
+      window.location.href = 'deposit.html';
+    } else {
+      loginErrorMsg.style.display = 'inline-block';
     }
   });
 
