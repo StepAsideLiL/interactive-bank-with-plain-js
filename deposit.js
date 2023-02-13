@@ -8,15 +8,12 @@
   const depositSubmitBtn = document.querySelector('#deposit-button');
   const withdrawInputField = document.querySelector('#withdraw-field');
   const withdrawSubmitBtn = document.querySelector('#withdraw-button');
+  const withdrawErrorMsg = document.querySelector('#withdraw-error');
 
   // Defining necessary global variable.
   let currentDeposit = parseInt(totalDeposit.innerText);
   let currentWithdraw = parseInt(totalWithdraw.innerText);
   let currentBalance = parseInt(totalBalance.innerText);
-  let newDepositAmount;
-  let newWithdrawAmount;
-  
-  // console.log(deposit + withdraw + balance);
 
   /**
    * Adding event listener to enable the deposit button.
@@ -36,16 +33,27 @@
    * Adding event listener to deposit money.
    */
   depositSubmitBtn.addEventListener('click', function() {
-    totalDeposit.innerText = parseInt(depositInputField.value) + currentDeposit;
-    totalBalance.innerText = parseInt(depositInputField.value) + currentBalance;
+    currentDeposit = parseInt(depositInputField.value) + currentDeposit;
+    currentBalance = parseInt(depositInputField.value) + currentBalance;
+    totalDeposit.innerText = currentDeposit;
+    totalBalance.innerText = currentBalance;
+    withdrawErrorMsg.style.display = 'none';
   });
 
   /**
    * Adding event listener to withdraw money.
    */
   withdrawSubmitBtn.addEventListener('click', function() {
-    totalWithdraw.innerText = currentDeposit - parseInt(withdrawInputField.value);
-    totalBalance.innerText = currentBalance - parseInt(withdrawInputField.value);
+    if (withdrawInputField.value <= currentBalance) {
+      currentWithdraw = Math.abs(currentWithdraw + parseInt(withdrawInputField.value));
+      currentBalance = Math.abs(parseInt(withdrawInputField.value) - currentBalance);
+      withdrawErrorMsg.style.display = 'none';
+      totalWithdraw.innerText = currentWithdraw;
+      totalBalance.innerText = currentBalance;
+    } else {
+      console.log('hello')
+      withdrawErrorMsg.style.display = 'block';
+    }
   });
 
 })()
