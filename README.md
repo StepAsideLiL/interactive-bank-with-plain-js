@@ -8,3 +8,5 @@
 ### Here is some screenshot
 ![Login Page](./assets/Screenshot_login.png)
 ![Balance Page](./assets/Screenshot_balance.png)
+
+### [Preview](https://stepasidelil.github.io/interactive-bank-with-plain-js/)
