@@ -7,12 +7,11 @@
     <title>Interactive Bank</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
   </head>
   <body>
     <div class="flex items-center justify-center h-screen bg-gradient-to-tr from-fuchsia-300 to-sky-500">
       <main>
-        <section class="flex flex-col items-center justify-center p-20 rounded bg-sky-100">
+        <section class="flex flex-col items-center justify-center p-20 rounded bg-sky-100" id="login-section">
           <h1 class="mx-auto mb-6 text-4xl font-bold text-center">
             <p>Welcome To Your</p>
             <p class="text-pink-700">Interactive Bank</p>
@@ -21,10 +20,12 @@
             <p class="font-medium text-center">Login To Your account</p>
             <input class="block w-full px-4 py-2 my-1 border border-gray-300 rounded-md shadow-sm" id="login-email" type="email" placeholder="Email">
             <input class="block w-full px-4 py-2 my-1 border border-gray-300 rounded-md shadow-sm" id="login-password" type="password" placeholder="Password">
-            <button class="block w-full px-4 py-2 my-1 font-semibold bg-pink-600 border border-gray-300 rounded-md shadow-sm hover:bg-pink-400 active:translate-y-0.5 text-slate-200" id="login-submit" type="submit">Login</button>
+            <button class="block w-full px-4 py-2 my-1 font-semibold bg-pink-600 border border-gray-300 rounded-md disabled:opacity-75 disabled:hover:bg-pink-600 disabled:translate-y-0 shadow-sm hover:bg-pink-800 active:translate-y-0.5 text-slate-200" id="login-submit" type="submit" disabled>Login</button>
           </div>
         </section>
       </main>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
